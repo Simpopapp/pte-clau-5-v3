@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 
 import { TopNav } from "@/components/TopNav";
 import { Button } from "@/components/ui/button";
-import { TYPE_META, getMeta, type TaskType } from "@/lib/pte";
+import { TYPE_COUNT, TYPE_META, getMeta, type TaskType } from "@/lib/pte";
 import { diagnoseAttempts, TAG_LABELS } from "@/lib/pte/diagnostics";
 import { readinessBySection, weakestSection } from "@/lib/pte/readiness";
 import { renderReportJson, renderReportMarkdown, weeklyReport } from "@/lib/pte/report";
@@ -24,12 +24,12 @@ export const Route = createFileRoute("/progress")({
       { title: "Progresso — PTE Master Hub" },
       {
         name: "description",
-        content: "Seu histórico, ritmo e evolução nos 16 task types do PTE.",
+        content: `Seu histórico, ritmo e evolução nos ${TYPE_COUNT} task types do PTE.`,
       },
       { property: "og:title", content: "Progresso — PTE Master Hub" },
       {
         property: "og:description",
-        content: "Seu histórico e evolução nos 16 task types do PTE.",
+        content: `Seu histórico e evolução nos ${TYPE_COUNT} task types do PTE.`,
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

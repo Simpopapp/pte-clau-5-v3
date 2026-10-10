@@ -74,6 +74,16 @@ export const sectionCounts = SECTION_ORDER.reduce(
   {} as Record<Section, number>,
 );
 
+/** Total de task types do catálogo (derivado de TYPE_META — nunca hardcodar). */
+export const TYPE_COUNT = Object.keys(TYPE_META).length;
+
+/** Total de questões formatado em pt-BR (ex.: "2.536") para UI e metas de SEO. */
+export const TOTAL_ALL_QUESTIONS_LABEL = TOTAL_ALL_QUESTIONS.toLocaleString("pt-BR");
+
+/** Contagem de uma seção formatada em pt-BR (ex.: "1.168"). */
+export const sectionCountLabel = (section: Section) =>
+  (sectionCounts[section] ?? 0).toLocaleString("pt-BR");
+
 /** Linhas do manifesto de um task type (ordem estável do banco). */
 export function metaByType(taskType: TaskType): QuestionMeta[] {
   return byType.get(taskType) ?? [];

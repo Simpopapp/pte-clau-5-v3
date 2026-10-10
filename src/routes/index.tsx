@@ -9,9 +9,10 @@ import {
   SECTION_META,
   SECTION_ORDER,
   TYPE_META,
+  TYPE_COUNT,
   firstIdOfType,
   metaBySection,
-  TOTAL_ALL_QUESTIONS,
+  TOTAL_ALL_QUESTIONS_LABEL,
 } from "@/lib/pte";
 import { buildQueue, countDue, countDueByType } from "@/lib/session";
 import {
@@ -32,17 +33,18 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PTE Master Hub — treino dos 16 task types do PTE" },
+      { title: `PTE Master Hub — treino dos ${TYPE_COUNT} task types do PTE` },
       {
         name: "description",
-        content:
-          "Pratique 16 tipos de questão do PTE (mais de 2.000 questões de treino) — Speaking, Writing, Reading e Listening — com correção detalhada, revisão espaçada e progresso local.",
+        content: `Pratique ${TYPE_COUNT} tipos de questão do PTE (${TOTAL_ALL_QUESTIONS_LABEL} questões de treino) — Speaking, Writing, Reading e Listening — com correção detalhada, revisão espaçada e progresso local.`,
       },
-      { property: "og:title", content: "PTE Master Hub — treino dos 16 task types do PTE" },
+      {
+        property: "og:title",
+        content: `PTE Master Hub — treino dos ${TYPE_COUNT} task types do PTE`,
+      },
       {
         property: "og:description",
-        content:
-          "Mais de 2.000 questões de treino do PTE em uma plataforma única, com revisão espaçada.",
+        content: `${TOTAL_ALL_QUESTIONS_LABEL} questões de treino do PTE em uma plataforma única, com revisão espaçada.`,
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -104,11 +106,13 @@ function HomePage() {
                 : "Comece sua sequência hoje"}
             </p>
             <h1 className="mt-2 font-serif text-3xl font-semibold tracking-tight md:text-4xl">
-              Todos os 16 tipos do PTE. <span className="text-primary">Um só treino.</span>
+              Todos os {TYPE_COUNT} tipos do PTE.{" "}
+              <span className="text-primary">Um só treino.</span>
             </h1>
             <p className="mt-2 text-sm text-muted-foreground">
-              {TOTAL_ALL_QUESTIONS} questões de treino de Speaking, Writing, Reading e Listening —
-              com correção detalhada, revisão espaçada e progresso salvo no seu navegador.
+              {TOTAL_ALL_QUESTIONS_LABEL} questões de treino de Speaking, Writing, Reading e
+              Listening — com correção detalhada, revisão espaçada e progresso salvo no seu
+              navegador.
             </p>
             {dueCount > 0 ? (
               <p className="mt-2 text-sm">
@@ -307,8 +311,9 @@ function HomePage() {
         </div>
 
         <p className="mt-6 text-center text-xs text-muted-foreground">
-          19 task types com motor de prática · 2.164 questões. Ainda não cobertos: Describe Image
-          (aguardando fontes com imagens acessíveis). Seu progresso fica salvo neste navegador.
+          {TYPE_COUNT} task types com motor de prática · {TOTAL_ALL_QUESTIONS_LABEL} questões. Ainda
+          não cobertos: Describe Image (aguardando fontes com imagens acessíveis). Seu progresso
+          fica salvo neste navegador.
         </p>
       </main>
     </div>

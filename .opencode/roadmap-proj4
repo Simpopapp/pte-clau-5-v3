@@ -18,7 +18,9 @@ Escopo único: mais questões reais, úteis e não duplicadas. Nenhuma outra mud
   - [x] Extração + normalização · dedupe + relatório · integração
 - [x] Fase 3 (P2) — lst_fib, summarize_spoken_text, read_aloud (+ RS/WFD só se 100% novos)
   - [x] Extração + normalização · dedupe + relatório · integração
-- [ ] Fase 4 — Fechamento
-  - [ ] Contagem final por tipo/fonte registrada no PRD
-  - [ ] Offline E2E (pendente do proj3) com o banco novo
+- [x] Fase 4 — Fechamento
+  - [x] Contagem final por tipo/fonte registrada no PRD (prd-project4 §8; total 2.536 no
+        manifesto, 5.072 nos JSONs)
+  - [x] Offline E2E (pendente do proj3) — executado no Projeto 5 (Fase 3 do roadmap-proj5,
+        produção via wrangler: Home, /listening e /practice WFD offline OK, console limpo)
   - Tipos sem fonte aprovada: registrados, nunca preenchidos com conteúdo duvidoso
