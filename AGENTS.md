@@ -29,4 +29,9 @@ Regras técnicas do projeto.
 
 _____________________Estado atual (preencher durante remix com as infos atuais do projeto) - (alteravel conforme progresso)______________________
 
-estado atual do projeto {nome}:
+estado atual do projeto PTE Master Hub:
+- Roadmaps: proj1 100% · proj2 100% · proj3 100% · proj4 100% · proj5 100% (remix fechado em 10/10/2026).
+- Banco: 5.072 questões nos JSONs; manifesto = 2.536 em 19 task types (speaking 1.003, writing 122, reading 243, listening 1.168); Describe Image fora do catálogo (sem fonte aprovada).
+- UI/SEO derivam contagens das constantes do manifest (TOTAL_ALL_QUESTIONS, sectionCountLabel) — proibido hardcodar números; teste src/test/metrics-sync.test.ts impede regressão.
+- Gates de referência: vitest 195/195 · tsgo limpo · build OK · lint 0 erros (8 warnings preexistentes) · offline E2E Playwright OK (produção via wrangler: SW só registra em PROD).
+- Próximo projeto pendente: nenhum no .opencode; Describe Image aguarda fonte com imagens acessíveis.
