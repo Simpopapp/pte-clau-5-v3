@@ -10,6 +10,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
+import { TYPE_COUNT } from "@/lib/pte";
 import { usePersistFailed } from "@/lib/storage";
 import appCss from "../styles.css?url";
 
@@ -81,8 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "PTE Master Hub" },
       {
         name: "description",
-        content:
-          "Prática e treino para o exame PTE Academic com 16 task types e correção em tempo real.",
+        content: `Prática e treino para o exame PTE Academic com ${TYPE_COUNT} task types e correção em tempo real.`,
       },
       { name: "theme-color", content: "#181926" },
       { name: "mobile-web-app-capable", content: "yes" },
@@ -94,8 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "PTE Master Hub" },
       {
         property: "og:description",
-        content:
-          "Prática e treino para o exame PTE Academic com 16 task types e correção em tempo real.",
+        content: `Prática e treino para o exame PTE Academic com ${TYPE_COUNT} task types e correção em tempo real.`,
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

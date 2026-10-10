@@ -1,0 +1,28 @@
+# Roadmap — projeto 5 (consistência de métricas, SEO dinâmico e fechamento)
+
+Fonte: `.opencode/prd-project5.md` (← `.opencode/project5`). Gates por fase: vitest
+verde · tsgo limpo · build OK · lint 0 erros · preview :8080 (Playwright). Escopo único:
+números sempre derivados do manifesto + regra de prevenção + offline E2E. Nada mais.
+
+- [ ] Fase 1 (P0) — Sincronização de números (UI + SEO)
+  - [ ] index.tsx: head() (task types e questões via TYPE_META/TOTAL), parágrafo do hero,
+        h1 e rodapé do hero dinâmicos (toLocaleString pt-BR, tipos não prontos dinâmicos)
+  - [ ] listening.tsx: head() com sectionCounts.listening
+  - [ ] Auditoria das demais rotas públicas: contagens fixas → constantes do manifesto
+- [ ] Fase 2 (P0) — Teste de sincronização
+  - [ ] src/test/metrics-sync.test.ts: (a) TOTAL === allMeta.length; (b) soma
+        sectionCounts === TOTAL; (c) rotas sem strings proibidas ("2.164", "1.165",
+        "16 tipos", "2.000 questões")
+  - Gates: vitest verde (só cresce de 181) · tsgo limpo · build OK · lint 0 erros
+- [ ] Fase 3 (P1) — Offline E2E (transferido do Projeto 3/4)
+  - [ ] /tmp/browser/test_offline.py: carga normal → set_offline → Home, /listening e
+        /practice?q=<WFD> via cache do sw.js, screenshots e sem erros fatais
+  - Gates: navegação offline sem falhas · console limpo nas rotas tocadas
+- [ ] Fase 4 (P1) — Fechamento
+  - [ ] Gates globais completos (vitest · tsgo · build · lint · preview :8080 Playwright)
+  - [ ] roadmap-proj4: registrar offline E2E executado no Projeto 5 + contagem no PRD 4
+  - [ ] AGENTS.md: preencher "Estado atual do projeto"
+  - [ ] Avisar o monitor ("remix finalizado (+N da etapa do roadmap)") e depois o usuário
+
+Regras: zero dependências novas de runtime; nenhuma mudança em motores/correção/SRS/
+dados; app 100% local (localStorage).

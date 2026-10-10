@@ -26,7 +26,8 @@ export function tokenSet(s) {
 }
 
 export function jaccard(a, b) {
-  const A = tokenSet(a), B = tokenSet(b);
+  const A = tokenSet(a),
+    B = tokenSet(b);
   if (A.size === 0 && B.size === 0) return 1;
   let inter = 0;
   for (const t of A) if (B.has(t)) inter++;
@@ -36,9 +37,11 @@ export function jaccard(a, b) {
 
 /** Texto-chave de comparação por tipo (passagem/pergunta/transcript). */
 export function keyText(q) {
-  return [q.text, q.content, q.transcript, q.prompt]
-    .filter((s) => typeof s === "string" && s.trim())
-    .join(" ") || normText(q.answer ?? "");
+  return (
+    [q.text, q.content, q.transcript, q.prompt]
+      .filter((s) => typeof s === "string" && s.trim())
+      .join(" ") || normText(q.answer ?? "")
+  );
 }
 
 export function existingOf(type) {
@@ -53,7 +56,11 @@ export function run(type, candidateFiles, threshold = 0.85) {
   const seenHashes = new Set(existing.map((q) => normText(keyText(q))));
   const existingTexts = existing.map((q) => keyText(q));
 
-  let found = 0, invalid = 0, dupExact = 0, dupNear = 0, kept = [];
+  let found = 0,
+    invalid = 0,
+    dupExact = 0,
+    dupNear = 0,
+    kept = [];
   for (const f of candidateFiles) {
     let list;
     try {
@@ -65,26 +72,43 @@ export function run(type, candidateFiles, threshold = 0.85) {
     }
     for (const q of list) {
       found++;
-      if (!q || !q.id || !keyText(q) || normText(keyText(q)).length < 20) { invalid++; continue; }
+      if (!q || !q.id || !keyText(q) || normText(keyText(q)).length < 20) {
+        invalid++;
+        continue;
+      }
       const h = normText(keyText(q));
-      if (seenHashes.has(h)) { dupExact++; continue; }
+      if (seenHashes.has(h)) {
+        dupExact++;
+        continue;
+      }
       const kt = keyText(q);
       let near = false;
       for (const t of existingTexts) {
-        if (jaccard(kt, t) >= threshold) { near = true; break; }
+        if (jaccard(kt, t) >= threshold) {
+          near = true;
+          break;
+        }
       }
       if (!near) {
         for (const k of kept) {
-          if (jaccard(kt, keyText(k)) >= threshold) { near = true; break; }
+          if (jaccard(kt, keyText(k)) >= threshold) {
+            near = true;
+            break;
+          }
         }
       }
-      if (near) { dupNear++; continue; }
+      if (near) {
+        dupNear++;
+        continue;
+      }
       seenHashes.add(h);
       existingTexts.push(kt);
       kept.push(q);
     }
   }
-  console.log(`[${type}] encontrados=${found} inválidos=${invalid} dupExatas=${dupExact} dupProximas=${dupNear} integrados=${kept.length} (banco atual=${existing.length})`);
+  console.log(
+    `[${type}] encontrados=${found} inválidos=${invalid} dupExatas=${dupExact} dupProximas=${dupNear} integrados=${kept.length} (banco atual=${existing.length})`,
+  );
   const outDir = path.join(ROOT, ".opencode/proj4-work/out");
   fs.mkdirSync(outDir, { recursive: true });
   const merged = [...existing, ...kept];
