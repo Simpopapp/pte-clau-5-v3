@@ -100,3 +100,13 @@ Se um tipo não atingir fonte aprovada: fica com o volume atual, registrado como
 | D2 | Prioridade pelos tipos mais escassos | Maior ganho de utilidade por questão |
 | D3 | Dedupe ≥ 0,85 contra banco inteiro do tipo | Zero duplicatas, inclusive entre fontes |
 | D4 | Sem IA/paráfrase | Só conteúdo de probabilidade muito alta de ser real |
+
+## 8. Contagem final do banco (Fase 4, registrada em 10/10/2026)
+
+Manifesto: 2.536 questões em 19 task types (JSONs completos: 5.072). Por tipo:
+wfd 934 · repeat_sentence 586 · read_aloud 195 · answer_short 141 · summarize_spoken_text 115 ·
+mcq_single 106 · lst_fib 96 · retell_lecture 81 · swt 79 · read_fib 62 · reorder_paragraphs 57 ·
+write_essay 43 · mcq_multi 18 · lst_mcq 6 · lst_summary 5 · lst_hcs 3 · lst_hiw 3 ·
+lst_smw 3 · lst_mcq_multi 3. Seções: speaking 1.003 · writing 122 · reading 243 · listening 1.168.
+Describe Image: sem fonte aprovada pelo gate — permanece fora do catálogo.
+Offline E2E com o banco novo foi executado no Projeto 5 (roadmap-proj5, Fase 3).
