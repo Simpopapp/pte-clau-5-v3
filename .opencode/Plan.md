@@ -47,5 +47,6 @@ Can you help me with the following actions:
 1. Cleared the copied Drizzle migrations and rescaffolded an empty migration set for the new project's database" conclua imediatamente todas as etapas do "project{N}" mais recente, sem para pra falar com o usuário até concluir todo o roadmap.(obs: se todos os "project{N}" estiverem concluidos apenas planeje as proximas melhorias de forma bem pensada tendo em vista o que temos até agora, escreva isso em um novo arquivo "project{N}" seguindo a logica de numeração e em seguida: ative o opencode, informe o monitor e avise o usuário (sem usar "ask")).
 - Obrigatorio avisar o opencode/monitor que o remix foi finalizado com a seguinte mensagem: "remix finalizado (+{N} da etapa do roadmap que foi efetuada)
 - Em tarefas de complexidade media/alta sempre guie o agente para olhar as melhores tools e skills e utiliza-las da melhor forma para realizar cada tipo de trabalho
+- Não use o monitor/opencode para realizar tarefas durante remix, realize-as por conta propria (e seus sub-agentes). ative-o e atualize-o sobre os progressos realizados a cada finalização completa de roadmap de projeto ou sob pedido explicito pró ativo do usuário
 
 
