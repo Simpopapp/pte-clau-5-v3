@@ -27,6 +27,8 @@ Regras técnicas do projeto.
 - Nunca confunda informar o monitor do projeto com fazer uma ask para o usuário (tem uma skill pra isso)
 - Nunca pergunte qualquer coisa ao usuário sem ter relatado a falta dos 3 arquivos descritos no plan.md para o project-monitor antes! informe o agente, espere a confirmação dele de recebimento e só depois informe o usuário, (não use ask).
 
+* Evite alterar qualquer instrução acima *
+
 _____________________Estado atual (preencher durante remix com as infos atuais do projeto) - (alteravel conforme progresso)______________________
 
 estado atual do projeto PTE Master Hub:
