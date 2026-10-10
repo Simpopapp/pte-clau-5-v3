@@ -1,0 +1,52 @@
+// Camada de dados PTE.
+//  - manifest.ts : índice leve e síncrono (contagens, listas, navegação) — use para UI geral.
+//  - catalog.ts  : conteúdo completo carregado sob demanda por task type.
+//  - readaloud.ts: API legada de Read Aloud (síncrona, importa o JSON inteiro) — NÃO importe em
+//    código de rota/UI; ela existe por compatibilidade com testes e ferramentas.
+
+export {
+  SECTION_META,
+  SECTION_ORDER,
+  TYPE_META,
+  TOTAL_ALL_QUESTIONS,
+  allMeta,
+  sectionCounts,
+  typeCounts,
+  metaBySection,
+  metaByType,
+  getMeta,
+  nextIdInType,
+  prevIdInType,
+  positionInType,
+  firstIdOfType,
+} from "./manifest";
+export type { QuestionMeta } from "./manifest";
+export {
+  ALL_TASK_TYPES,
+  getLoadedQuestion,
+  loadAllQuestions,
+  loadQuestion,
+  loadQuestions,
+  loadTypeQuestions,
+} from "./catalog";
+export { tokenize } from "./types";
+export type {
+  Difficulty,
+  Question as UnifiedQuestion,
+  ReadAloudQuestion,
+  RepeatSentenceQuestion,
+  RetellLectureQuestion,
+  AnswerShortQuestion,
+  SwtQuestion,
+  WriteEssayQuestion,
+  SstQuestion,
+  DictationQuestion,
+  FibQuestion,
+  HiwQuestion,
+  ChoiceQuestion,
+  SummaryChoiceQuestion,
+  ReorderQuestion,
+  ReadFibQuestion,
+  Section,
+  TaskType,
+} from "./types";
